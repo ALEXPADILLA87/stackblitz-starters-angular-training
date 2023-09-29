@@ -3,7 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
-import { ExampleModule } from './components/array/example.module';
+import { ExampleModule } from './components/example/example.module';
 import { CartModule } from './components/cart/cart.module';
 import { ProductModule } from './components/product/product.module';
 @NgModule({
@@ -13,7 +13,7 @@ import { ProductModule } from './components/product/product.module';
     ProductModule,
     CartModule,
     AppRoutingModule,
-    ExampleModule
+    ExampleModule,
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],

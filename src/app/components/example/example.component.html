@@ -1,26 +1,4 @@
 <mat-tab-group animationDuration="1000ms">
-  <mat-tab label="Set">
-    <div class="container">
-      <p>
-        The Set object lets you store unique values of any type, whether
-        primitive values or object references.
-      </p>
-      <pre class="hljs language-javascript">
-        <code>array = [1, 2, 5];
-         array2 = [5, 6, 7];
-    
-         this.setArray = new Set(this.array.concat(this.array2));
-         this.spreadSet = new Set([...this.array, ...this.array2]);
-        </code>
-        
-      
-        </pre>
-
-      <button (click)="set()">click to see result!</button>
-
-      <code *ngIf="displaySet">Set: {{ displaySet }}</code>
-    </div>
-  </mat-tab>
   <mat-tab label="Truthy and Falsy">
     <div class="container">
       <p>When we need to convert a value to either true or false</p>
@@ -51,6 +29,59 @@
           <code>function() {{ '{' }}{{ '}' }}</code> (an “empty” function)
         </li>
       </ul>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Set">
+    <div class="container">
+      <p>
+        The Set object lets you store unique values of any type, whether
+        primitive values or object references.
+      </p>
+      <pre class="hljs language-javascript">
+        <code>array = [1, 2, 5];
+         array2 = [5, 6, 7];
+    
+         this.setArray = new Set(this.array.concat(this.array2));
+         this.spreadSet = new Set([...this.array, ...this.array2]);
+        </code>
+        
+      
+        </pre>
+
+      <button (click)="set()">click to see result!</button>
+
+      <code *ngIf="displaySet">Set: {{ displaySet }}</code>
+    </div>
+  </mat-tab>
+  <mat-tab label="Spread syntax">
+    <div class="container">
+      <p>
+        The spread syntax allows array elements to be passed in as individual
+        arguments.
+      </p>
+      <pre class="hljs language-javascript">
+        <code>
+          const parts = ["shoulders", "knees"];
+          const lyrics = ["head", ...parts, "and", "toes"];
+          //  ["head", "shoulders", "knees", "and", "toes"]
+
+          // Example 2:
+          let user = {{'{'}}name: 'John Doe', age: 10 };
+        </code>
+        <p>
+          Whereas an old way of doing this would have been to use the Object.assign() method this way:
+        </p>
+        <code>
+          let copiedUser = {{'{'}} ...user };
+          copiedUser.name = 'Clark Kent';
+          console.log(user); // {{'{'}}name: "John Doe", age: 10 }
+          console.log(copiedUser); // {{'{'}} name: "Clark Kent", age: 10 }
+        </code>
+      </pre>
+      <button (click)="spread()">Spread!</button>
+      <p class="blue">{{ user | json }}</p>
+      <p class="blue">{{ copiedUser | json }}</p>
     </div>
   </mat-tab>
   <mat-tab label="Array">
@@ -153,35 +184,5 @@
         </div>
       </mat-tab>
     </mat-tab-group>
-  </mat-tab>
-  <mat-tab label="Spread syntax">
-    <div class="container">
-      <p>
-        The spread syntax allows array elements to be passed in as individual
-        arguments.
-      </p>
-      <pre class="hljs language-javascript">
-        <code>
-          const parts = ["shoulders", "knees"];
-          const lyrics = ["head", ...parts, "and", "toes"];
-          //  ["head", "shoulders", "knees", "and", "toes"]
-
-          // Example 2:
-          let user = {{'{'}}name: 'John Doe', age: 10 };
-        </code>
-        <p>
-          Whereas an old way of doing this would have been to use the Object.assign() method this way:
-        </p>
-        <code>
-          let copiedUser = {{'{'}} ...user };
-          copiedUser.name = 'Clark Kent';
-          console.log(user); // {{'{'}}name: "John Doe", age: 10 }
-          console.log(copiedUser); // {{'{'}} name: "Clark Kent", age: 10 }
-        </code>
-      </pre>
-      <button (click)="spread()">Spread!</button>
-      <p class="blue">{{ user | json }}</p>
-      <p class="blue">{{ copiedUser | json }}</p>
-    </div>
   </mat-tab>
 </mat-tab-group>
